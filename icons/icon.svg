@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="20" fill="#4CAF50"/>
+  
+  <!-- WebP crossed out -->
+  <g>
+    <!-- WebP text -->
+    <text x="64" y="70" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">WebP</text>
+    
+    <!-- Red X/Cross -->
+    <line x1="20" y1="20" x2="108" y2="108" stroke="#f44336" stroke-width="8" stroke-linecap="round"/>
+    <line x1="108" y1="20" x2="20" y2="108" stroke="#f44336" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Original format icons (GIF, PNG, JPG) -->
+  <g transform="translate(0, 95)">
+    <text x="64" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFD700" text-anchor="middle">GIF PNG JPG</text>
+  </g>
+</svg>
+

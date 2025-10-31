@@ -1,0 +1,30 @@
+# Generated icon files (users need to generate these locally)
+# Uncomment these lines if you want users to generate their own icons
+# icons/icon16.png
+# icons/icon48.png
+# icons/icon128.png
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+
+# Chrome extension package
+*.crx
+*.pem
+*.zip
+
+# Logs
+*.log
+

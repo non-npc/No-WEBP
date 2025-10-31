@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No WebP - Settings</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    h2 {
+      color: #444;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .description {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .toggle-label {
+      flex: 1;
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+    
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .3s;
+      border-radius: 24px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+      background-color: #4CAF50;
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    
+    .allowlist-container {
+      margin-top: 15px;
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    
+    button:hover {
+      background: #45a049;
+    }
+    
+    button:active {
+      background: #3d8b40;
+    }
+    
+    .allowlist-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .allowlist-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .allowlist-item span {
+      color: #333;
+      font-size: 14px;
+      font-family: monospace;
+    }
+    
+    .remove-btn {
+      padding: 5px 12px;
+      background: #f44336;
+      font-size: 12px;
+    }
+    
+    .remove-btn:hover {
+      background: #da190b;
+    }
+    
+    .empty-message {
+      color: #999;
+      font-style: italic;
+      font-size: 14px;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .status-message {
+      margin-top: 20px;
+      padding: 12px 15px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: none;
+    }
+    
+    .status-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status-message.show {
+      display: block;
+    }
+    
+    .info-box {
+      background: #e3f2fd;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 4px;
+    }
+    
+    .info-box p {
+      color: #0d47a1;
+      font-size: 13px;
+      margin: 5px 0;
+    }
+    
+    .info-box strong {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>No WebP - Original Image Formats</h1>
+    <p class="subtitle">Configure settings to control how images are loaded</p>
+    
+    <div class="section">
+      <h2>General Settings</h2>
+      
+      <div class="toggle-container">
+        <label class="toggle-label" for="enabledToggle">Enable WebP/AVIF blocking</label>
+        <label class="switch">
+          <input type="checkbox" id="enabledToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="toggle-container">
+        <label class="toggle-label" for="urlRewritingToggle">Enable URL parameter rewriting</label>
+        <label class="switch">
+          <input type="checkbox" id="urlRewritingToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="info-box">
+        <p><strong>WebP/AVIF blocking:</strong> Prevents browsers from requesting WebP/AVIF images by modifying request headers and DOM elements.</p>
+        <p><strong>URL rewriting:</strong> Removes common URL parameters that force WebP format (e.g., fm=webp, format=webp).</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Site Allowlist</h2>
+      <p class="description">Add domains where WebP/AVIF should NOT be blocked. Useful for sites that only serve images in WebP format.</p>
+      
+      <div class="allowlist-container">
+        <div class="input-group">
+          <input type="text" id="domainInput" placeholder="example.com">
+          <button id="addDomainBtn">Add Domain</button>
+        </div>
+        
+        <div class="allowlist-items" id="allowlistItems">
+          <div class="empty-message">No domains in allowlist</div>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <p><strong>Examples:</strong> google.com, reddit.com, imgur.com</p>
+        <p>Enter just the domain name without protocol (http://) or paths.</p>
+      </div>
+    </div>
+    
+    <div class="status-message" id="statusMessage">Settings saved successfully!</div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
+
