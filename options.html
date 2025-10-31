@@ -272,7 +272,7 @@
     
     <div class="section">
       <h2>Site Allowlist</h2>
-      <p class="description">Add domains where WebP/AVIF should NOT be blocked. Useful for sites that only serve images in WebP format.</p>
+      <p class="description">Domains where WebP/AVIF will NOT be blocked. Some sites like Reddit only serve images in WebP format and will break without it. These sites are pre-configured in the default allowlist.</p>
       
       <div class="allowlist-container">
         <div class="input-group">
@@ -286,8 +286,9 @@
       </div>
       
       <div class="info-box">
-        <p><strong>Examples:</strong> google.com, reddit.com, imgur.com</p>
-        <p>Enter just the domain name without protocol (http://) or paths.</p>
+        <p><strong>Default allowlist:</strong> reddit.com, redd.it (and related domains) - these sites only serve WebP</p>
+        <p><strong>Add more sites if needed:</strong> Enter just the domain name without protocol (http://) or paths.</p>
+        <p><strong>Note:</strong> You can remove default sites if you want to test blocking WebP on them, but they may not function properly.</p>
       </div>
     </div>
     

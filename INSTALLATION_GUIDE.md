@@ -37,7 +37,8 @@
 2. **Configure Settings**
    - ✅ Enable WebP/AVIF blocking (should be on by default)
    - ✅ Enable URL parameter rewriting (optional, recommended)
-   - Add any sites to allowlist if needed (see below)
+   - Review the default allowlist (Reddit is pre-configured since it only serves WebP)
+   - Add any additional sites to allowlist if needed
 
 ## Testing the Extension
 
@@ -96,19 +97,26 @@
 
 ## Advanced Configuration
 
-### Adding Sites to Allowlist
+### Site Allowlist
 
-Some sites only serve WebP with no fallback. If a site breaks with the extension:
+**Default Allowlist:**
+The extension pre-configures Reddit (reddit.com and related domains) on the allowlist because Reddit only serves images in WebP format.
+
+**Adding Sites to Allowlist:**
+
+If other sites break with the extension enabled:
 
 1. Open Options page
 2. Under "Site Allowlist", enter the domain (e.g., `example.com`)
 3. Click "Add Domain"
 4. Reload the problematic site
 
-**Common allowlist candidates**:
-- Sites with broken images when extension is active
-- Sites that explicitly require WebP for functionality
-- Your own websites if you're testing
+**When to add sites:**
+- Images are broken or not loading
+- Site only serves images in WebP format
+- You want to allow WebP on specific sites while blocking it elsewhere
+
+**Note:** You can remove Reddit from the allowlist to test blocking WebP on it, but images may not load properly.
 
 ### URL Rewriting
 

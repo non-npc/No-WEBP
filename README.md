@@ -72,9 +72,11 @@ Click the extension icon or go to **Options** to:
    - Toggle on/off based on your needs
 
 3. **Site Allowlist**
-   - Add domains where WebP should NOT be blocked
+   - **Default allowlist**: Reddit (reddit.com and related domains) is pre-configured since it only serves WebP
+   - Add additional domains where WebP should NOT be blocked
    - Useful for sites that only serve images in WebP format
    - Example: `example.com`, `cdn.example.com`
+   - You can remove default sites if needed (though they may not function properly)
 
 ### Saving Images
 
@@ -91,11 +93,13 @@ Click the extension icon or go to **Options** to:
 
 Test the extension on these sites known to serve WebP:
 
-- **Google Images**: https://images.google.com
-- **Reddit**: https://www.reddit.com
-- **Twitter**: https://twitter.com
-- **Imgur**: https://imgur.com
-- **Wikipedia**: https://www.wikipedia.org
+- **Google Images**: https://images.google.com (should show original formats)
+- **Reddit**: https://www.reddit.com (on allowlist by default, will show WebP)
+- **Twitter**: https://twitter.com (should show original formats)
+- **Imgur**: https://imgur.com (should show original formats)
+- **Wikipedia**: https://www.wikipedia.org (should show original formats)
+
+**Note**: Reddit is on the default allowlist because it only serves WebP. To test WebP blocking on Reddit, you would need to remove it from the allowlist (though images may not load).
 
 ### Verification Steps
 
@@ -172,9 +176,9 @@ The extension creates dynamic rules to:
 ### Images Still Loading as WebP
 
 1. Check if extension is enabled (Options page)
-2. Verify site is not in allowlist
+2. **Check if site is on the allowlist** - Reddit and related domains are on the default allowlist
 3. Check browser console for errors
-4. Some CDNs may force WebP regardless - add to allowlist
+4. Some CDNs may only serve WebP with no fallback - add these sites to allowlist if they break
 
 ### Save Not Working
 
@@ -211,4 +215,5 @@ This project is provided as-is for educational and practical use.
 - Context menu for saving images in original format
 - Options page with allowlist management
 - URL parameter rewriting (optional)
+- Default allowlist for WebP-only sites (Reddit and related domains)
 

@@ -4,7 +4,12 @@
 const DEFAULT_SETTINGS = {
   enabled: true,
   urlRewriting: true,
-  allowlist: []
+  allowlist: [
+    'reddit.com',
+    'redd.it',
+    'redditstatic.com',
+    'redditmedia.com'
+  ]
 };
 
 // DOM elements
