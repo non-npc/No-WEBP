@@ -45,11 +45,6 @@ A Chrome Extension (Manifest V3) that prevents WebP and AVIF formats, ensuring i
 
 For detailed installation instructions, see `INSTALLATION_GUIDE.md`.
 
-### Package for Distribution
-
-1. Zip the entire extension directory
-2. Upload to Chrome Web Store
-
 ## Usage
 
 ### Basic Usage
