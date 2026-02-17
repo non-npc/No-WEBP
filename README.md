@@ -1,6 +1,7 @@
 # No WebP - Original Image Formats Extension
 
 A Chrome Extension (Manifest V3) that prevents WebP and AVIF formats, ensuring images load and save in their original formats (GIF, PNG, JPG).
+
 ![No WebP Screenshot](screenshot.png)
 
 ## Features
